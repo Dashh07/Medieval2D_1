@@ -51,6 +51,9 @@ TagManager:
   - name: Background3
     uniqueID: 59224403
     locked: 0
-  - name: New Layer 4
+  - name: Background4
     uniqueID: 2756946129
+    locked: 0
+  - name: Platform
+    uniqueID: 2216730221
     locked: 0
