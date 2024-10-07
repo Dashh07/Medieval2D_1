@@ -8,6 +8,8 @@ public class PlayerMovement : MonoBehaviour
     public float horizontalInput;
     public float speed;
     public float jumpForce;
+    public Animator animator;
+    public bool facingRight = true;
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask groundLayer;
@@ -22,6 +24,22 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (horizontalInput > 0 && !facingRight)
+        {
+
+            Flip();
+
+
+        }
+
+        if (horizontalInput < 0 && facingRight)
+        {
+
+            Flip();
+
+
+
+        }
 
         if (Input.GetButtonDown("Jump") && isGrounded())
         {
@@ -42,6 +60,18 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontalInput * speed, rb.velocity.y);
+
+        animator.SetFloat("Speed",Mathf.Abs(horizontalInput));
+    }
+
+
+    void Flip()
+    {
+
+        transform.Rotate(0f, 180f, 0f);
+
+        facingRight = !facingRight;
+
     }
 
 }
