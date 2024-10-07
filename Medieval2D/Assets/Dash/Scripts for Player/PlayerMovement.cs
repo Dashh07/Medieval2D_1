@@ -45,9 +45,15 @@ public class PlayerMovement : MonoBehaviour
         {
 
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            animator.SetBool("isJumping", true);
 
         }
+        if (isGrounded() && rb.velocity.y < 0.01)
+        {
 
+            animator.SetBool("isJumping", false);   
+
+        }
 
 
     }
@@ -55,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        
     }
 
     private void FixedUpdate()
