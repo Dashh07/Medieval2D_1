@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
+
+       
         if (horizontalInput > 0 && !facingRight)
         {
 
