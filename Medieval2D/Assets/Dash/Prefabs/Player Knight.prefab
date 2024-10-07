@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3849455389659061494}
   - component: {fileID: 421932718323666980}
   - component: {fileID: 3994456981727503233}
+  - component: {fileID: 8745096926206221116}
   m_Layer: 0
   m_Name: Player Knight
   m_TagString: Untagged
@@ -204,6 +205,19 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &8745096926206221116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721235699315246402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3755915b1688db246bde97d2ad6e808a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 421932718323666980}
 --- !u!1 &5185937629701952295
 GameObject:
   m_ObjectHideFlags: 0
