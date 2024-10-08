@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 421932718323666980}
   - component: {fileID: 3994456981727503233}
   - component: {fileID: 8745096926206221116}
+  - component: {fileID: 1362637000135560832}
   m_Layer: 0
   m_Name: Player Knight
   m_TagString: Untagged
@@ -218,6 +219,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 421932718323666980}
+  attackPoint: {fileID: 0}
+  attackRange: 0.31
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  attackDamage: 30
+--- !u!114 &1362637000135560832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721235699315246402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 300b960a576c3364b929679196a557b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  died:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  maxHealth: 100
+  currentHealth: 0
+  healthbar: {fileID: 0}
 --- !u!1 &5185937629701952295
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerCombat_1 : MonoBehaviour
 {
     public Animator animator;
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
+    public int attackDamage = 30;
 
 
     private void Start()
@@ -33,7 +37,6 @@ public class PlayerCombat_1 : MonoBehaviour
 
             animator.SetBool("isAttack", false);
         }
-    }
-
-    
+      
+}
 }
