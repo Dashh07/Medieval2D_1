@@ -24,7 +24,6 @@ public class EnemyArcher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("lol");
         walkingTarget = Patrol1.points[0];
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
     }
