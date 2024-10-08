@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - shield
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - Ground
   - Enemy
-  - 
+  - Player
   - 
   - 
   - 
@@ -51,14 +52,14 @@ TagManager:
   - name: Background2
     uniqueID: 1265119539
     locked: 0
-  - name: Props
-    uniqueID: 2025771913
-    locked: 0
   - name: Background3
     uniqueID: 59224403
     locked: 0
   - name: Background4
     uniqueID: 2756946129
+    locked: 0
+  - name: Props
+    uniqueID: 2025771913
     locked: 0
   - name: Platform
     uniqueID: 2216730221
