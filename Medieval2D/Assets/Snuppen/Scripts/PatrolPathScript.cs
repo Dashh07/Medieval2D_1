@@ -8,12 +8,12 @@ public class PatrolPathScript : MonoBehaviour
 {
 
     //Saves patrol point's positions at start instead of their transforms, allowing parenting of paths to enemies
-    Vector3[] patrolPoints;
+    Vector2[] patrolPoints;
     
     void Start()
     {
         
-        patrolPoints = new Vector3[transform.childCount];
+        patrolPoints = new Vector2[transform.childCount];
         Transform childTransform;
 
         for (int i = 0; i < patrolPoints.Length; i++)
@@ -22,7 +22,7 @@ public class PatrolPathScript : MonoBehaviour
             patrolPoints[i] = childTransform.position;
         }
     }
-    public Vector3[] ReturnPatrolPoints(){
+    public Vector2[] ReturnPPs(){
         return patrolPoints;
     }
 
