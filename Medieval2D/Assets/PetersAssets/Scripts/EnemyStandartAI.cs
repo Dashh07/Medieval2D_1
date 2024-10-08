@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemymovement1 : MonoBehaviour
 {
     public float speed = 1.0f;
-
     private Transform target;
     private int wavepointIndex = 0;
 
