@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,11 +23,11 @@ public class EnemyDamage : MonoBehaviour
 
         if (health != null)
         {
-
+            
             health.TakeDamage(30);
 
 
         }
     }
-
+   
 }
