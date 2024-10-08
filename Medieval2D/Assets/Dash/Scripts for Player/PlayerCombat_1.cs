@@ -8,7 +8,7 @@ public class PlayerCombat_1 : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    public int attackDamage = 30;
+    public float attackDamage = 30;
 
 
     private void Start()
@@ -19,6 +19,7 @@ public class PlayerCombat_1 : MonoBehaviour
     void Update()
     {
         Attack();
+        
     }
 
     void Attack()
@@ -29,14 +30,37 @@ public class PlayerCombat_1 : MonoBehaviour
 
 
             animator.SetBool("isAttack", true);
-        }
 
-        if (Input.GetButtonUp("Fire1"))
+        }
+    }
+  
+    
+    public void attack()
+    {
+
+        Collider2D[] hitenemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange,enemyLayers );
+
+        foreach (Collider2D enemy in hitenemies)
         {
 
+            enemy.GetComponent<EnemyHealth>().health -= attackDamage;
 
-            animator.SetBool("isAttack", false);
         }
-      
-}
+
+    }
+    
+    
+    
+    public void endAttack()
+    {
+
+        animator.SetBool("isAttack", false);
+
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(attackPoint.transform.position, attackRange);
+    }
+
 }

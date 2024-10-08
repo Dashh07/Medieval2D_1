@@ -5,51 +5,22 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int maxHealth = 100;
-    int currentHealth;
-    bool isDead;
-
+    public float health;  
+    public float maxHealth = 100;
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        health = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+   void Update()
     {
-        if (isDead) return;
-        currentHealth -= damage;
-
-       
-
-       
-
-        if (currentHealth <= 0)
+        if(health <= 0)
         {
 
-            Die();
+            Destroy(gameObject);
 
         }
-
-
-    }
-
-    void Die()
-    {
-
-
-
-        
-        isDead = true;
-
-
-        //Disable Enemy
-
-
-        Destroy(gameObject);
-
-
-
     }
 
 }
