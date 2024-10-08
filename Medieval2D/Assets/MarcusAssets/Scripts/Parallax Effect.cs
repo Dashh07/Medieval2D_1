@@ -56,6 +56,8 @@ public class ParallaxEffect : MonoBehaviour
     private void LateUpdate()
     {
         distance = cam.position.x - camStartPos.x;
+        transform.position = new Vector3(cam.position.x + 30, transform.position.y, transform.position.z);
+
         for (int i = 0; i < backgrounds.Length; i++) 
         {
             float speed = backSpeed[i] * parallaxSpeed;
