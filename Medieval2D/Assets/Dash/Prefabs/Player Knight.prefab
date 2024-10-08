@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 8770375975677536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.078, y: 0, z: 0}
+  m_LocalPosition: {x: 0.0584, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,6 +46,7 @@ GameObject:
   - component: {fileID: 421932718323666980}
   - component: {fileID: 3994456981727503233}
   - component: {fileID: 682661084395588136}
+  - component: {fileID: 6662929375694331254}
   m_Layer: 0
   m_Name: Player Knight
   m_TagString: Untagged
@@ -255,6 +256,25 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthbar: {fileID: 0}
+--- !u!114 &6662929375694331254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2721235699315246402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3755915b1688db246bde97d2ad6e808a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 421932718323666980}
+  attackPoint: {fileID: 814288987842626638}
+  attackRange: 0.5
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 512
+  attackDamage: 30
 --- !u!1 &5185937629701952295
 GameObject:
   m_ObjectHideFlags: 0
