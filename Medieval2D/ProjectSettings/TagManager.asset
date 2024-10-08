@@ -48,6 +48,9 @@ TagManager:
   - name: Background2
     uniqueID: 1265119539
     locked: 0
+  - name: Props
+    uniqueID: 2025771913
+    locked: 0
   - name: Background3
     uniqueID: 59224403
     locked: 0
