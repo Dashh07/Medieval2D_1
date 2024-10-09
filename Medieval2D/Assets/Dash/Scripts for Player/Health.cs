@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-       
+        healthbar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
 
     }  
 
