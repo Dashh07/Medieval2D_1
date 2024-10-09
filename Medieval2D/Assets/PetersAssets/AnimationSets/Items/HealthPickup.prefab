@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 348882285628122494}
   - component: {fileID: 5601962364135752904}
   - component: {fileID: 2829778103525538585}
+  - component: {fileID: 982145998584030033}
   m_Layer: 0
   m_Name: HealthPickup
   m_TagString: Untagged
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.114999995, y: 0.17782743}
@@ -130,3 +131,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27, y: 0.38172588}
   m_EdgeRadius: 0
+--- !u!114 &982145998584030033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4575018863005272416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab6bba302dbf6f44885717fe7321ad19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBonus: 20
