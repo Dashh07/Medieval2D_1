@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814288987842626638}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,9 +49,9 @@ GameObject:
   - component: {fileID: 6662929375694331254}
   - component: {fileID: 4326211177451644904}
   - component: {fileID: 7618826965195273805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player Knight
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   rb: {fileID: 1427704643625882108}
   horizontalInput: 0
   speed: 5
-  jumpForce: 12
+  jumpForce: 20
   animator: {fileID: 421932718323666980}
   facingRight: 1
   groundCheck: {fileID: 819064136137372415}
@@ -367,7 +367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8883846323623255755}
   - component: {fileID: 1973791306731629498}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shield
   m_TagString: shield
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 819064136137372415}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Groundcheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
