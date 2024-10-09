@@ -5,28 +5,28 @@ using UnityEngine;
 
 public class EnemyPatrolBehaviour : EnemyMovementBehaviour
 {
-    [SerializeField] PatrolPathScript patrolObjectScript;
-    [SerializeField] Vector2[] patrolPoints;
+    [SerializeField] BasicEnemy enemy;
+    [Header("Chase Range!")]
+    [SerializeField] float chaseRangeModifier = 1;
+    Vector2[] patrolPoints;
     int patrolTarget = 0;
-    int tempPatrolTarget = 0;
     float largestPPDistance;
     float playerPPDistance;
     float tempPlayerPPDistance;
     
     
 
-    PatrolPathScript FindPatrolObject(){
-        return transform.Find("PatrolPath").GetComponent<PatrolPathScript>();
-    }
-
     protected override void EnemyMoveStateEnter(){
-        if (patrolPoints.Length == 0) FetchPP();
+        if (enemy == null)              enemy = GetComponent<BasicEnemy>();
+        if (chaseRangeModifier == 0)    chaseRangeModifier = 1;
 
+        if (patrolPoints == null || patrolPoints.Length == 0) FetchPP();
     }
 
     void FetchPP(){
-        if (patrolObjectScript == null) patrolObjectScript = FindPatrolObject();
-        patrolPoints = patrolObjectScript.ReturnPPs();
+        Debug.Log("Fetching PP");
+        
+        patrolPoints = ReturnPPs();
 
         largestPPDistance = 0;
 
@@ -35,7 +35,7 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
                 if (Vector2.Distance(pp1, pp2) > largestPPDistance) largestPPDistance = Vector2.Distance(pp1, pp2);
             }
         }
-        Debug.Log(largestPPDistance);
+       largestPPDistance *= chaseRangeModifier;
     }
 
     public float ReturnBigPPDistance(){
@@ -50,14 +50,14 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
     public override void EnemyStateUpdate()
     {
         ChaseCheck();
-        transform.rotation = new();
-        
+        PatrolPointCheck();
+
         Vector2 dir = patrolPoints[patrolTarget] - (Vector2)transform.position;
         if (!isFlying) dir.y = 0;
 
         EnemyMove(dir);
 
-        PatrolPointCheck();
+        
     }
     void PatrolPointCheck(){
         //Checks only the x position if the enemy isn't flying. This way they won't get stuck trying to reach a patrolPoints[] in the air 
@@ -83,20 +83,21 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
         //Checks the distances between the player and each patrol point, and compares the longest of those
         //to the longest distance between each patrol point, making the enemy chase only if...
 
-        //If the player is closer to all patrol points than they are to eachother!!!
+        //If the player is closer to all patrol points than they are to eachother!!
         foreach (Vector2 pp in patrolPoints){
             tempPlayerPPDistance = Vector2.Distance((Vector2)playerTransform.position, pp);
 
             if (tempPlayerPPDistance > playerPPDistance) playerPPDistance = tempPlayerPPDistance;
         }
-        if (playerPPDistance < largestPPDistance) GetComponent<BasicEnemy>().ChangeState<EnemyChaseBehaviour>();
+        
+        if (playerPPDistance < largestPPDistance) enemy.ChangeState<EnemyChaseBehaviour>();
         
     }
     public void PatrolCheck(){
         playerPPDistance = 0;
         
         //Same thing here, only reversed! If the player is further away from any patrol point than they are to eachother,
-        //the enemy starts patrolling again.
+        //the enemy starts patrolling again. Method is called in EnemyChaseBehaviour
         foreach (Vector2 pp in patrolPoints){
             tempPlayerPPDistance = Vector2.Distance((Vector2)playerTransform.position, pp);
 
@@ -109,14 +110,15 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
         }
     }
     void ChangeToPatrolMode(){
-        GetComponent<BasicEnemy>().ChangeState<EnemyPatrolBehaviour>();
+        int tempPatrolTarget = new(); 
+
+        enemy.ChangeState<EnemyPatrolBehaviour>();
         
         //Changes the patrol target to the one closest to the player, eliminating possibility of making enemies 
         //go back and forth when entering and exiting chase range repeatedly        
         playerPPDistance = largestPPDistance;
 
         for (int i = 0; i < patrolPoints.Length; i++){
-            Debug.Log(i);
             tempPlayerPPDistance = Vector2.Distance(patrolPoints[i], (Vector2)playerTransform.position);
 
             if (tempPlayerPPDistance < playerPPDistance){
@@ -127,5 +129,28 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
 
         patrolTarget = tempPatrolTarget;
 
+    }
+    public Vector2[] ReturnPPs(){
+        //Accesses the childobject named PatrolPath and builds a patrol path out of it's children
+
+        Transform patrolPathTransform;
+        Vector2[] _patrolPoints;
+
+        Transform childTransform;
+
+        patrolPathTransform = transform.Find("PatrolPath");
+        _patrolPoints = new Vector2[patrolPathTransform.childCount];
+
+        
+
+        if (_patrolPoints.Length == 0) Debug.LogError("Patrolpath object doesn't have any patrol point child objects!");
+
+        for (int i = 0; i < _patrolPoints.Length; i++)
+        {
+            childTransform = patrolPathTransform.GetChild(i).transform;
+            _patrolPoints[i] = (Vector2)childTransform.position;
+        }
+
+        return _patrolPoints;
     }
 }

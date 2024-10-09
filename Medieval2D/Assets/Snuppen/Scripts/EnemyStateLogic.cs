@@ -35,7 +35,7 @@ public class EnemyStateLogic : MonoBehaviour
                 return;
             }
         }
-        Debug.LogWarning("Behaviour script is missing from the enemy or the state doesn't exist!");
+        Debug.LogError("Behaviour script is missing from the enemy or the state doesn't exist!");
     }
 
     private void FixedUpdate(){

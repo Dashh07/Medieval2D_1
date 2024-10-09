@@ -9,10 +9,10 @@ public class EnemyChaseBehaviour : EnemyMovementBehaviour
     bool hasPatrolBehaviour;
     
     protected override void EnemyMoveStateEnter(){
+        hasPatrolBehaviour = false;
         if (patrolBehaviour == null) patrolBehaviour = GetComponent<EnemyPatrolBehaviour>();
+        if (patrolBehaviour != null) hasPatrolBehaviour = true;
 
-        
-        
     }
 
     public override void EnemyStateExit(){
@@ -20,11 +20,11 @@ public class EnemyChaseBehaviour : EnemyMovementBehaviour
     }
 
     public override void EnemyStateUpdate(){
-        transform.rotation = new();
+        
         Vector2 dir = (Vector2)(playerTransform.position - transform.position);
         EnemyMove(dir);
 
-        if (patrolBehaviour == null) return;
+        if (!hasPatrolBehaviour) return;
 
         patrolBehaviour.PatrolCheck();
         
