@@ -24,7 +24,6 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
     }
 
     void FetchPP(){
-        Debug.Log("Fetching PP");
         
         patrolPoints = ReturnPPs();
 
@@ -42,22 +41,16 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
         return largestPPDistance;
     }
 
-    public override void EnemyStateExit()
-    {
-        
-    }
+
 
     public override void EnemyStateUpdate()
     {
-        ChaseCheck();
-        PatrolPointCheck();
-
         Vector2 dir = patrolPoints[patrolTarget] - (Vector2)transform.position;
         if (!isFlying) dir.y = 0;
-
         EnemyMove(dir);
 
-        
+        ChaseCheck();
+        PatrolPointCheck();
     }
     void PatrolPointCheck(){
         //Checks only the x position if the enemy isn't flying. This way they won't get stuck trying to reach a patrolPoints[] in the air 
@@ -85,12 +78,12 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
 
         //If the player is closer to all patrol points than they are to eachother!!
         foreach (Vector2 pp in patrolPoints){
-            tempPlayerPPDistance = Vector2.Distance((Vector2)playerTransform.position, pp);
+            tempPlayerPPDistance = Vector2.Distance((Vector2)PlayerTransform.position, pp);
 
             if (tempPlayerPPDistance > playerPPDistance) playerPPDistance = tempPlayerPPDistance;
         }
         
-        if (playerPPDistance < largestPPDistance) enemy.ChangeState<EnemyChaseBehaviour>();
+        if (playerPPDistance < largestPPDistance) enemy.AttackingState();
         
     }
     public void PatrolCheck(){
@@ -99,7 +92,7 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
         //Same thing here, only reversed! If the player is further away from any patrol point than they are to eachother,
         //the enemy starts patrolling again. Method is called in EnemyChaseBehaviour
         foreach (Vector2 pp in patrolPoints){
-            tempPlayerPPDistance = Vector2.Distance((Vector2)playerTransform.position, pp);
+            tempPlayerPPDistance = Vector2.Distance((Vector2)PlayerTransform.position, pp);
 
             if (tempPlayerPPDistance > playerPPDistance) playerPPDistance = tempPlayerPPDistance;
         
@@ -119,7 +112,7 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
         playerPPDistance = largestPPDistance;
 
         for (int i = 0; i < patrolPoints.Length; i++){
-            tempPlayerPPDistance = Vector2.Distance(patrolPoints[i], (Vector2)playerTransform.position);
+            tempPlayerPPDistance = Vector2.Distance(patrolPoints[i], (Vector2)PlayerTransform.position);
 
             if (tempPlayerPPDistance < playerPPDistance){
                 playerPPDistance = tempPlayerPPDistance;

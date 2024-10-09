@@ -12,7 +12,7 @@ public class BasicEnemy : EnemyStateLogic
     [SerializeField] float maxHealth = 100;
     protected float health;
 
-    void ResetEnemyHealth(){
+    protected void ResetEnemyHealth(){
         health = maxHealth;
     }
     public float ReturnSpeed(){
@@ -31,6 +31,10 @@ public class BasicEnemy : EnemyStateLogic
     }
     void EnemyDeath(){
         Destroy(gameObject);
+    }
+
+    public virtual void AttackingState(){
+        ChangeState<EnemyChaseBehaviour>();
     }
     
 }

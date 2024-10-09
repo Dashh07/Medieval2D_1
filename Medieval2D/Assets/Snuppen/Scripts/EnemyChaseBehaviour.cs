@@ -15,14 +15,13 @@ public class EnemyChaseBehaviour : EnemyMovementBehaviour
 
     }
 
-    public override void EnemyStateExit(){
-        
-    }
+
 
     public override void EnemyStateUpdate(){
         
-        Vector2 dir = (Vector2)(playerTransform.position - transform.position);
+        Vector2 dir = (Vector2)(PlayerTransform.position - transform.position);
         EnemyMove(dir);
+
 
         if (!hasPatrolBehaviour) return;
 
