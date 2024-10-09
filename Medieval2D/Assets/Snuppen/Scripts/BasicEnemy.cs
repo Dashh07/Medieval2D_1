@@ -21,7 +21,7 @@ public class BasicEnemy : EnemyStateLogic
     
     void Start()
     {
-        
+        ResetEnemyHealth();
         ChangeState<EnemyPatrolBehaviour>();
     }
 
