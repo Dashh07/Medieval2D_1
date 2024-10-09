@@ -234,7 +234,7 @@ MonoBehaviour:
   rb: {fileID: 1427704643625882108}
   horizontalInput: 0
   speed: 5
-  jumpForce: 20
+  jumpForce: 12
   animator: {fileID: 421932718323666980}
   facingRight: 1
   groundCheck: {fileID: 819064136137372415}
