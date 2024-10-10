@@ -19,13 +19,15 @@ public class EnemyHealth : MonoBehaviour
 
    void Update()
     {
+
+
         if (health <= 0)
         {
 
             animator.SetBool("isDead", true);
            died.Invoke();
 
-
+           
 
 
 

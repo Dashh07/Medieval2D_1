@@ -50,7 +50,7 @@ public class Boss_Walk : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
        
-        animator.ResetTrigger("Attack");
+            animator.ResetTrigger("Attack");
     }
 
    
