@@ -49,7 +49,7 @@ abstract public class EnemyState : MonoBehaviour
     protected EnemyStateLogic enemyScript;
     [SerializeField] protected Animator animator;
     void Awake(){
-        animator ??= transform.Find("EnemySprite").GetComponent<Animator>();
+        if (animator == null) animator = transform.Find("EnemySprite").GetComponent<Animator>();
         enemyScript = GetComponent<EnemyStateLogic>();
         enemyScript.AddStateToList(this);
     }
