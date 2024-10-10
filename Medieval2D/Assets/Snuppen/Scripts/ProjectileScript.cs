@@ -13,9 +13,9 @@ public class ProjectileScript : MonoBehaviour
     float projectileDrop = 0.5f;
     Vector3 rotateQuat;
 
-    int lifeTime;
+    bool hasHitPlayer;
 
-    [SerializeField] float angleOffset;
+    int lifeTime;
 
     public void SetDirectionAndSpeed(Vector2 _shotDirection, float _projectileSpeed){
         
@@ -25,11 +25,6 @@ public class ProjectileScript : MonoBehaviour
 
 
         DetermineAim();
-        
-        
-
-        
-        
         
         
     }
@@ -54,6 +49,8 @@ public class ProjectileScript : MonoBehaviour
     private void FixedUpdate(){
         lifeTime++;
         if (lifeTime > 500) Destroy(gameObject);
+        
+        if (hasHitPlayer) return;
 
         ProjectileBallistics();
 
@@ -63,6 +60,7 @@ public class ProjectileScript : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other){
+        if (hasHitPlayer) return;
         if (other.CompareTag("Enemy")){
             return;
         }
@@ -72,7 +70,9 @@ public class ProjectileScript : MonoBehaviour
         }
         
         if (other.CompareTag("Player")){
-            
+            other.GetComponent<Health>().TakeDamage(40);
+            hasHitPlayer = true;
+            transform.SetParent(other.transform);
             return;
         }
         Destroy(gameObject);
