@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss_Walk_Snup : StateMachineBehaviour
+public class Boss_Chase_Player_Snup : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float attackRange = 3f;
@@ -16,10 +16,11 @@ public class Boss_Walk_Snup : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        rb = animator.GetComponent<Rigidbody2D>();
-        boss = animator.GetComponent<FlipforBoss>();
-        playerHealth = player.GetComponent<Health>();
+        windUp = 0;
+        player ??= GameObject.FindGameObjectWithTag("Player").transform;
+        rb ??= animator.GetComponent<Rigidbody2D>();
+        boss ??= animator.GetComponent<FlipforBoss>();
+        playerHealth ??= player.GetComponent<Health>();
 
     }
 

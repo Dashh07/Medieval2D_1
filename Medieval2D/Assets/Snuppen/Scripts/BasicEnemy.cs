@@ -44,5 +44,15 @@ public class BasicEnemy : EnemyStateLogic
     public virtual void AttackingState(){
         ChangeState<EnemyChaseBehaviour>();
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Health health = collision.gameObject.GetComponent<Health>();
+
+        if (health != null)
+        {
+            health.TakeDamage(30);
+            animator.SetTrigger("IsAttacking");
+        }
+    }
     
 }
