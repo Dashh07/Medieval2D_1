@@ -12,6 +12,11 @@ public class BasicEnemy : EnemyStateLogic
     [SerializeField] float maxHealth = 100;
     protected float health;
 
+    private void Awake()
+    {
+        animator ??= transform.Find("EnemySprite").GetComponent<Animator>(); 
+    }
+
     protected void ResetEnemyHealth(){
         health = maxHealth;
     }

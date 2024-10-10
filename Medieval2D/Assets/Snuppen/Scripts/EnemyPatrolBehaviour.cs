@@ -45,6 +45,7 @@ public class EnemyPatrolBehaviour : EnemyMovementBehaviour
 
     public override void EnemyStateUpdate()
     {
+        
         Vector2 dir = patrolPoints[patrolTarget] - (Vector2)transform.position;
         if (!isFlying) dir.y = 0;
         EnemyMove(dir);
