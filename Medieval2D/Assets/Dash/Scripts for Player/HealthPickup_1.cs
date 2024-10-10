@@ -16,12 +16,13 @@ public class HealthPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        if (!col.CompareTag("Player")) return;
         if (playerHealth.currentHealth < playerHealth.maxHealth)
         {
 
-            Destroy(gameObject);
+            
             playerHealth.currentHealth = playerHealth.currentHealth + healthBonus;
-
+            Destroy(gameObject);
 
 
         }
