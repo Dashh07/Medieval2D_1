@@ -37,13 +37,14 @@ public class Health : MonoBehaviour
         {
 
             animator.SetBool("isHurt", true);
-
+            animator.SetBool("isJumping", false);
         }
 
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
-            
+            animator.SetBool("isHurt", false);
+            animator.SetBool("isJumping", false);
             animator.SetBool("isDead", true);
                 died.Invoke();
             isDead = true; 

@@ -53,7 +53,8 @@ public class PlayerMovement : MonoBehaviour
         if (isGrounded() && rb.velocity.y < 0.01)
         {
 
-            animator.SetBool("isJumping", false);   
+            animator.SetBool("isJumping", false);
+            
 
         }
 

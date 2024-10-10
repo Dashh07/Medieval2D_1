@@ -48,7 +48,6 @@ GameObject:
   - component: {fileID: 580321114692792897}
   - component: {fileID: 7231747410691031347}
   - component: {fileID: 4235871146399991167}
-  - component: {fileID: 8483298558026691082}
   - component: {fileID: 4704169701749539730}
   m_Layer: 9
   m_Name: Archer
@@ -65,7 +64,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2208151777739436639}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.38, y: -1.46, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
@@ -167,7 +166,7 @@ MonoBehaviour:
   enemyStates: []
   animator: {fileID: 4704169701749539730}
   speed: 3.96
-  maxHealth: 100
+  maxHealth: 10
 --- !u!114 &3909982525424280814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,19 +268,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.06975338, y: -0.2116758}
   m_Size: {x: 0.32183266, y: 0.602553}
   m_Direction: 0
---- !u!114 &8483298558026691082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2208151777739436639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 281e4e271c7305341a54c355e7a2658e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4704169701749539730}
 --- !u!95 &4704169701749539730
 Animator:
   serializedVersion: 5
