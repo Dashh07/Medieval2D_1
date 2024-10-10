@@ -12,22 +12,24 @@ public class Health : MonoBehaviour
     public Image healthbar;
     public Animator animator;
     public bool isDead;
+    int iFrames;
 
     private void Start()
     {
         currentHealth = maxHealth;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         healthbar.fillAmount = Mathf.Clamp(currentHealth / maxHealth, 0, 1);
-
+        iFrames--;
     }  
 
     public void TakeDamage(float damage)
     {
-      
 
+        if (iFrames > 0) return;
+        iFrames = 40;
         currentHealth -= damage;
         
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
