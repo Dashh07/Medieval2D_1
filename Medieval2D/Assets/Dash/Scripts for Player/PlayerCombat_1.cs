@@ -37,14 +37,20 @@ public class PlayerCombat_1 : MonoBehaviour
     
     public void attack()
     {
-
+        EnemyHealth enemyHealth;
+        BasicEnemy basicEnemy;
         Collider2D[] hitenemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange,enemyLayers );
 
         foreach (Collider2D enemy in hitenemies)
         {
+            basicEnemy = null;
+            enemyHealth = null;
 
-            enemy.GetComponent<EnemyHealth>().health -= attackDamage;
+            basicEnemy = enemy.GetComponent<BasicEnemy>();
+            enemyHealth = enemy.GetComponent<EnemyHealth>();
 
+            if (enemyHealth != null) enemyHealth.health -= attackDamage;
+            if (basicEnemy != null) basicEnemy.TakeDamage(attackDamage);
         }
 
     }
