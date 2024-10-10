@@ -57,10 +57,12 @@ public class EnemyShootBehaviour : EnemyMovementBehaviour
     }
 
     void TryShoot(Vector2 dir){
+        animator.SetBool("IsAttacking", true);
         shootTimer++;
         if (shootTimer < shootInterval) return;
+        
         shootTimer = 0;
-
+        
         ShootArrow(dir);
 
         CheckBehaviourChange();
@@ -79,10 +81,12 @@ public class EnemyShootBehaviour : EnemyMovementBehaviour
     void ShootArrow(Vector2 dir){
         
         float playerDistance = dir.magnitude;
-        
+        Vector2 shootPoint = (Vector2)transform.position;
+        shootPoint.y -= 0.35f;
 
-        shotArrow = Instantiate(Arrow, transform.position, new());
+        shotArrow = Instantiate(Arrow, shootPoint, new());
         shotArrow.GetComponent<ProjectileScript>().SetDirectionAndSpeed(dir, projectileSpeed);
+        animator.SetBool("IsAttacking", false);
     }
     
 

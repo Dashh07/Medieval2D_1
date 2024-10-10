@@ -35,9 +35,9 @@ abstract public class EnemyMovementBehaviour : EnemyState
 
     protected void SetRotation(Vector2 dir){
         if (dir.x < 0){
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        } else if (dir.x > 0){
             transform.rotation = Quaternion.Euler(0, 180, 0);
+        } else if (dir.x > 0){
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
     protected abstract void EnemyMoveStateEnter();

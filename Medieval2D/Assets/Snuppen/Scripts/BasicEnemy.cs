@@ -6,8 +6,8 @@ using UnityEngine.XR;
 
 public class BasicEnemy : EnemyStateLogic
 {
-     
-    
+
+    [SerializeField] Animator animator;
     [SerializeField] protected float speed = 1;
     [SerializeField] float maxHealth = 100;
     protected float health;
@@ -16,6 +16,7 @@ public class BasicEnemy : EnemyStateLogic
         health = maxHealth;
     }
     public float ReturnSpeed(){
+        animator.SetFloat("Speed", speed);
         return speed;
     }
     
@@ -28,8 +29,10 @@ public class BasicEnemy : EnemyStateLogic
     public void TakeDamage(float damage){
         health -= damage;
         if (health <= 0) EnemyDeath();
+        animator.SetTrigger("IsHit");
     }
     void EnemyDeath(){
+        animator.SetTrigger("IsDead");
         Destroy(gameObject);
     }
 

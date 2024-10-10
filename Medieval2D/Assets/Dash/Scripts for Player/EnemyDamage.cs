@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class EnemyDamage : MonoBehaviour
         {
             
             health.TakeDamage(30);
+            animator.SetTrigger("IsHit");
 
 
         }
