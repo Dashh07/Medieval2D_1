@@ -71,9 +71,7 @@ public class ProjectileScript : MonoBehaviour
         
         if (other.CompareTag("Player")){
             other.GetComponent<Health>().TakeDamage(40);
-            hasHitPlayer = true;
-            transform.SetParent(other.transform);
-            return;
+            
         }
         Destroy(gameObject);
     }
