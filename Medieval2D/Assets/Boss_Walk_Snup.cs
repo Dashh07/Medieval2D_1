@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
-public class Boss_Walk : StateMachineBehaviour
+public class Boss_Walk_Snup : StateMachineBehaviour
 {
     public float speed = 2.5f;
     public float attackRange = 3f;
@@ -11,6 +10,8 @@ public class Boss_Walk : StateMachineBehaviour
     Rigidbody2D rb;
     FlipforBoss boss;
     Health playerHealth;
+    int windUp;
+    [SerializeField] int attackInterval;
     
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,16 +32,21 @@ public class Boss_Walk : StateMachineBehaviour
         }
         boss.LookAtPlayer();
 
+        if (Vector2.Distance(player.position, rb.position) <= attackRange)
+        {
+            windUp++;
+            if (windUp >= attackInterval) animator.SetTrigger("Attack");
+
+            return;
+        }   
+        windUp--;
+        if (windUp < 0) windUp = 0;
         
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         rb.MovePosition(newPos);
 
-        if (Vector2.Distance(player.position, rb.position) <= attackRange)
-        {
-            animator.SetTrigger("Attack");
-
-        }
+        
 
 
 
@@ -53,5 +59,4 @@ public class Boss_Walk : StateMachineBehaviour
             animator.ResetTrigger("Attack");
     }
 
-   
 }

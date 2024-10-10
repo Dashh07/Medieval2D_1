@@ -15,7 +15,7 @@ public class BossAttack : MonoBehaviour
     public void Attack()
     {
         
-            Vector3 pos = transform.position;
+        Vector3 pos = transform.position;
         pos += transform.right * attackPoint.x;
         pos += transform.up * attackPoint.y;
         Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, player);
@@ -29,6 +29,14 @@ public class BossAttack : MonoBehaviour
 
 
     }
+    private void OnDrawGizmos()
+    {
+        Vector3 pos = transform.position;
+        pos += transform.right * attackPoint.x;
+        pos += transform.up * attackPoint.y;
+        Gizmos.DrawWireSphere(pos, attackRange);
+    }
+
 
     
 }
