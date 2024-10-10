@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
         }
 
 
-        if (currentHealth <= 0)
+        if (currentHealth == 0)
         {
             animator.SetBool("isHurt", false);
             animator.SetBool("isJumping", false);

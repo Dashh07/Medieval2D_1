@@ -23,7 +23,7 @@ public class Boss_Attack_Snup : StateMachineBehaviour
             boss.facingLeft = true;
         }
 
-        animator.SetBool("attackPlayer", false);
+        animator.SetBool("dontAttackPlayer", true);
         
     }
 
