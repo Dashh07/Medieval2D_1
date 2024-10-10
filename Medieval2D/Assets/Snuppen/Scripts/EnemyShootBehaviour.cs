@@ -71,7 +71,7 @@ public class EnemyShootBehaviour : EnemyMovementBehaviour
             fleeBehaviour.FleeCheck();
         }
         
-        if (!hasPatrolBehaviour){
+        if (hasPatrolBehaviour){
             patrolBehaviour.PatrolCheck();
         }
         

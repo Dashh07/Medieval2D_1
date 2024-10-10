@@ -7,7 +7,7 @@ public class ArcherEnemy : BasicEnemy
     
     private void Start(){
         ResetEnemyHealth();
-        ChangeState<EnemyShootBehaviour>();
+        ChangeState<EnemyPatrolBehaviour>();
     }
     public override void AttackingState(){
         ChangeState<EnemyShootBehaviour>();
