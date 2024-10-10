@@ -11,6 +11,7 @@ public class BasicEnemy : EnemyStateLogic
     [SerializeField] protected float speed = 1;
     [SerializeField] float maxHealth = 100;
     protected float health;
+    EnemyPatrolBehaviour enemyPPBehaviour;
 
     private void Awake()
     {
@@ -28,7 +29,12 @@ public class BasicEnemy : EnemyStateLogic
     void Start()
     {
         ResetEnemyHealth();
-        ChangeState<EnemyPatrolBehaviour>();
+        enemyPPBehaviour = GetComponent<EnemyPatrolBehaviour>();
+        if (enemyPPBehaviour != null) {
+            ChangeState<EnemyPatrolBehaviour>();
+        } else {
+            //poopers oopers
+        }
     }
 
     public void TakeDamage(float damage){
