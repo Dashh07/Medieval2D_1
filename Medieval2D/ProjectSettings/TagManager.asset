@@ -65,6 +65,12 @@ TagManager:
   - name: Platform
     uniqueID: 2216730221
     locked: 0
+  - name: Enemy
+    uniqueID: 773640409
+    locked: 0
   - name: Player
     uniqueID: 3305062947
+    locked: 0
+  - name: Overlord
+    uniqueID: 1890117107
     locked: 0
