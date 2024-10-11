@@ -547,6 +547,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 7176102955505559010, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 519420031}
+    - target: {fileID: 7176102955505559010, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 9003861227636120920}
+    - target: {fileID: 7176102955505559010, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
+      propertyPath: offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7552860505912279514, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -991,6 +1003,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 137b5f1d9ba7e9b498ac4e27ca8d226f, type: 3}
+--- !u!4 &9003861227636120920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1676371037531492193, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
+  m_PrefabInstance: {fileID: 1344153107}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
