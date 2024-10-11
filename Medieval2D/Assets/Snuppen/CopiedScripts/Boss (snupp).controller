@@ -149,6 +149,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3904382954cbcc840a30e82fe2d84c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1102 &-5065422568422969882
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: windup
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: b334546aebb9c9442a7cbc0d134dfb7a, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!114 &-4275525467062789203
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,7 +252,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 8996327367594907330}
-    m_Position: {x: 340, y: 170, z: 0}
+    m_Position: {x: 340, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -1121821538318923591}
     m_Position: {x: 530, y: 80, z: 0}
@@ -242,6 +268,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: -3066432768143567170}
     m_Position: {x: 150, y: 80, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -5065422568422969882}
+    m_Position: {x: 580, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -7620795544295555294}
