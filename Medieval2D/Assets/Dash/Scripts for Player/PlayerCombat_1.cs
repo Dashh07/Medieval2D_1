@@ -49,7 +49,7 @@ public class PlayerCombat_1 : MonoBehaviour
             basicEnemy = enemy.GetComponent<BasicEnemy>();
             enemyHealth = enemy.GetComponent<EnemyHealth>();
 
-            if (enemyHealth != null) enemyHealth.health -= attackDamage;
+            if (enemyHealth != null) enemyHealth.TakeDamage(attackDamage);
             if (basicEnemy != null) basicEnemy.TakeDamage(attackDamage);
         }
 
