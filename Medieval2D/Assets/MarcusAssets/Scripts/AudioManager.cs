@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip PlayerDeath;
     public AudioClip BossAttack;
     public AudioClip walking;
-        
+
+    public void PlaySFX(AudioClip clip)
+    {
+        SFXSource.PlayOneShot(clip);
+    }
 
 }

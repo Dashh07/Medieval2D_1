@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 169437710}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 901212806}
   SFXSource: {fileID: 1478077228}
-  Attack: {fileID: 8300000, guid: 33df12e3e1f053847a16849dc7912e4a, type: 3}
+  Attack: {fileID: 8300000, guid: 49e07bc8d4919f14e895c75e50652c9c, type: 3}
   GetHit: {fileID: 8300000, guid: aa48101fd9bd24b82af88afb182a9bf5, type: 3}
   BossDeath: {fileID: 8300000, guid: 164f512ee254041408cbe30ae458666d, type: 3}
   PlayerDeath: {fileID: 8300000, guid: df7bdf25ad7be7445bb2e6f04d759df3, type: 3}

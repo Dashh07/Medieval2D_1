@@ -10,6 +10,12 @@ public class PlayerCombat_1 : MonoBehaviour
     public LayerMask enemyLayers;
     public float attackDamage = 30;
 
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     private void Start()
     {
@@ -28,7 +34,7 @@ public class PlayerCombat_1 : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
 
-
+            audioManager.PlaySFX(audioManager.Attack);
             animator.SetBool("isAttack", true);
 
         }
