@@ -18,7 +18,7 @@ public class Boss_GoHome_Snup : StateMachineBehaviour
         homePosition = bossScript.homePosition;
 
         chaseRange = bossScript.chaseRange;
-        chaseRange *= 0.9f;
+        chaseRange *= 1.1f;
         
     }
 

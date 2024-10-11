@@ -23,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        healthBar = GetComponentInChildren<FloatingHealthBar>();
+        //healthBar = GetComponentInChildren<FloatingHealthBar>();
 
     }
 

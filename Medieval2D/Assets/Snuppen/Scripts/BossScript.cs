@@ -11,6 +11,7 @@ public class BossScript : MonoBehaviour
     [SerializeField] public float chaseRange;
     [SerializeField] public float speed = 1;
     [SerializeField] float maxHealth = 100;
+    [SerializeField] public float attackRange;
     protected float health;
 
     void Start(){

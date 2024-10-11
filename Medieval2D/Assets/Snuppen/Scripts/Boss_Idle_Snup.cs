@@ -8,6 +8,7 @@ public class Boss_Idle_Snup : StateMachineBehaviour
     Transform playerTransform;
     float chaseRange;
     float attackRange;
+    BossScript bossScript;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
         playerTransform ??= GameObject.FindGameObjectWithTag("Player").transform;
 
@@ -16,13 +17,16 @@ public class Boss_Idle_Snup : StateMachineBehaviour
         bossVec2 = (Vector2)animator.transform.position;
 
         if (Vector2.Distance(playerVec2, bossVec2) < attackRange) animator.SetBool("attackPlayer", true);
-        
 
-        homePosition = animator.GetComponent<BossScript>().homePosition;
-        chaseRange = animator.GetComponent<BossScript>().chaseRange;
+        BossScript bossScript = animator.GetComponent<BossScript>();
+
+        homePosition = bossScript.homePosition;
+        chaseRange = bossScript.chaseRange;
+        attackRange = bossScript.attackRange;
+
         chaseRange *= 0.9f;
 
-        attackRange = 5;
+        
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
@@ -32,7 +36,7 @@ public class Boss_Idle_Snup : StateMachineBehaviour
 
         if (Vector2.Distance(playerVec2, bossVec2) < attackRange) animator.SetBool("attackPlayer", true);
         if (Vector2.Distance(playerVec2, homePosition) < chaseRange) animator.SetBool("playerEnteredRange", true);
-        if (Vector2.Distance(bossVec2, homePosition) > 1f) animator.SetBool("returnHome", true);
+        if (Vector2.Distance(bossVec2, homePosition) > chaseRange) animator.SetBool("returnHome", true);
         
         
     }
