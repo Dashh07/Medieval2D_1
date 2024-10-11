@@ -495,10 +495,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 743899470255359981, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
-      propertyPath: attackRange
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1676371037531492193, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7168546
@@ -540,8 +536,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2867506259731918506, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
-      propertyPath: maxHealth
-      value: 100
+      propertyPath: died.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8227367784039677391}
+    - target: {fileID: 2867506259731918506, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
+      propertyPath: died.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4576484049271782559, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: m_Name
@@ -551,14 +551,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 7176102955505559010, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 9003861227636120920}
-    - target: {fileID: 7176102955505559010, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
-      propertyPath: offset.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7552860505912279514, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -1003,10 +995,10 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 137b5f1d9ba7e9b498ac4e27ca8d226f, type: 3}
---- !u!4 &9003861227636120920 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1676371037531492193, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
-  m_PrefabInstance: {fileID: 1344153107}
+--- !u!1 &8227367784039677391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5061051754502059755, guid: 137b5f1d9ba7e9b498ac4e27ca8d226f, type: 3}
+  m_PrefabInstance: {fileID: 8227367784039677390}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

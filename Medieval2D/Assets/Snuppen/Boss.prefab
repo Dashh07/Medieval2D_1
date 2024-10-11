@@ -103,6 +103,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 4117181762032790858}
+  camera: {fileID: 0}
+  target: {fileID: 1676371037531492193}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &2751142189888434538
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,6 +494,7 @@ MonoBehaviour:
   chaseRange: 10
   speed: 3
   maxHealth: 100
+  attackRange: 1
 --- !u!114 &2108229199596778092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,8 +540,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 532587929662387524}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   health: 0
-  maxHealth: 10
+  maxHealth: 100
   animator: {fileID: 8870515186240423125}
   healthBar: {fileID: 7176102955505559010}
 --- !u!1 &8416587895803691344
