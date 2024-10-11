@@ -537,11 +537,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2108229199596778092, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: attackRange
-      value: 0.5
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 2108229199596778092, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: attackPoint.x
-      value: -0.54
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 2108229199596778092, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: attackPoint.y

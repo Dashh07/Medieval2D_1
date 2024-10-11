@@ -22,7 +22,7 @@ public class Boss_Idle_Snup : StateMachineBehaviour
         chaseRange = animator.GetComponent<BossScript>().chaseRange;
         chaseRange *= 0.9f;
 
-        attackRange = 3;
+        attackRange = 5;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex){
