@@ -5,7 +5,6 @@ using UnityEngine.Events;
 
 public class EnemyHealth : MonoBehaviour
 {
-    AudioManager audioManager;
     // Start is called before the first frame update
     [SerializeField] UnityEvent died;
     public float health;  
@@ -13,12 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public Animator animator;
 
     [SerializeField] FloatingHealthBar healthBar;
-
-
-    private void Awake()
-    {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
-    }
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +23,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        //healthBar = GetComponentInChildren<FloatingHealthBar>();
+       
 
     }
 
@@ -39,7 +33,7 @@ public class EnemyHealth : MonoBehaviour
         healthBar.UpdateHealthBar(health,maxHealth);
         if (health <= 0)
         {
-            audioManager.PlaySFX(audioManager.BossDeath);
+
             animator.SetBool("isDead", true);
             died.Invoke();
         }
