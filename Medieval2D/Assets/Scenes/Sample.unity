@@ -442,7 +442,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6574746327800858819, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6574746327800858819, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
       propertyPath: m_SortingLayerID
@@ -10573,7 +10573,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2867506259731918506, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: maxHealth
-      value: 100
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2901972416348235466, guid: d21dbc1098601fb47b5d8b15f0e1f80a, type: 3}
       propertyPath: m_SortingLayerID

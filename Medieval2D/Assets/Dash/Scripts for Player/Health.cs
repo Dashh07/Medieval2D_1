@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
+
+    AudioManager audioManager;
+
     [SerializeField] UnityEvent died;
     public float maxHealth = 100;
     public float currentHealth;
@@ -14,6 +17,10 @@ public class Health : MonoBehaviour
     public bool isDead;
     int iFrames;
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     private void Start()
     {
         currentHealth = maxHealth;
@@ -37,7 +44,7 @@ public class Health : MonoBehaviour
 
         if(currentHealth > 0)
         {
-
+            audioManager.PlaySFX(audioManager.GetHit);
             animator.SetBool("isHurt", true);
             animator.SetBool("isJumping", false);
         }
@@ -47,6 +54,7 @@ public class Health : MonoBehaviour
         {
             animator.SetBool("isHurt", false);
             animator.SetBool("isJumping", false);
+            audioManager.PlaySFX(audioManager.PlayerDeath);
             animator.SetBool("isDead", true);
                 died.Invoke();
             isDead = true; 

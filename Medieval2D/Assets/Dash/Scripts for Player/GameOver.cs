@@ -20,7 +20,7 @@ public class GameOver : MonoBehaviour
     public void Restart()
     {
 
-        SceneManager.LoadScene("Dash's Character");
+        SceneManager.LoadScene("MarcusLevel");
 
 
     }

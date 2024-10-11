@@ -38,6 +38,7 @@ public class PlayerCombat_1 : MonoBehaviour
             animator.SetBool("isAttack", true);
 
         }
+        
     }
   
     
