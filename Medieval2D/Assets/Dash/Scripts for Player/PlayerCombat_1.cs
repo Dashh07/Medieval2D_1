@@ -9,6 +9,8 @@ public class PlayerCombat_1 : MonoBehaviour
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
     public float attackDamage = 30;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
 
     AudioManager audioManager;
 
@@ -24,8 +26,14 @@ public class PlayerCombat_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Attack();
-        
+        if (Time.time >= nextAttackTime)
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
+        }
     }
 
     void Attack()
