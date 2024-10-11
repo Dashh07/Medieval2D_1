@@ -10637,6 +10637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Knight
       objectReference: {fileID: 0}
+    - target: {fileID: 3849455389659061494, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4742802974939384256, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.34
@@ -10704,7 +10708,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2721235699315246402, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1622269107}
   m_SourcePrefab: {fileID: 100100000, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
 --- !u!1001 &960307910
 PrefabInstance:
@@ -14149,11 +14156,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5886459098237127443, guid: b8ba9cf0fb57a3048b88298bcaa500de, type: 3}
   m_PrefabInstance: {fileID: 1211355942}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1622269096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2721235699315246402, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
+  m_PrefabInstance: {fileID: 913735749}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1622269106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4742802974939384256, guid: 8524599761e40884fbcf7fe46949a785, type: 3}
   m_PrefabInstance: {fileID: 913735749}
   m_PrefabAsset: {fileID: 0}
+--- !u!70 &1622269107
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622269096}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0045317844, y: 0.007250778}
+  m_Size: {x: 0.038666926, y: 0.110498354}
+  m_Direction: 0
 --- !u!4 &1652390511 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5886459098237127443, guid: b8ba9cf0fb57a3048b88298bcaa500de, type: 3}
